@@ -22,8 +22,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: "TakeCareAI", // Usually your GitHub org/user name.
+  projectName: "TakeCareDoc", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -79,7 +79,7 @@ const config = {
         title: "TakeCareAI",
         logo: {
           alt: "TakeCareAI Logo",
-          src: "img/logo.svg",
+          src: "img/logo.png",
         },
         items: [
           {
@@ -89,7 +89,7 @@ const config = {
             label: "DevGuide",
           },
           {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/TakeCareOrg",
             label: "GitHub",
             position: "right",
           },
