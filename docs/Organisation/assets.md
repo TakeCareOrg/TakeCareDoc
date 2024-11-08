@@ -4,28 +4,75 @@ sidebar_position: 2
 
 # Assets
 
-Docusaurus is a **static-site-generator** (also called **[Jamstack](https://jamstack.org/)**).
+Dans le projet **TakeCareAI**, les ressources (assets) sont organisées en trois dossiers principaux pour faciliter la gestion des polices, des icônes et des images.
 
-It builds your site as simple **static HTML, JavaScript and CSS files**.
+## Structure des Dossiers
 
-## Build your site
+La structure des dossiers dans `src/assets` est la suivante :
 
-Build your site **for production**:
-
-```bash
-npm run build
+```plaintext
+src
+└── assets
+        ├── fonts
+        ├── icons
+        └── images
 ```
 
-The static files are generated in the `build` folder.
+### 1. Dossier `fonts`
 
-## Deploy your site
+Ce dossier contient les polices utilisées dans l'application. Les polices sont organisées par famille de polices.
 
-Test your production build locally:
+Exemple de fichier dans `fonts` :
 
-```bash
-npm run serve
-```
+- `Inter` :
+  - `Inter Medium.ttf` : Police pour le texte avec une épaisseur moyenne.
 
-The `build` folder is now served at [http://localhost:3000/](http://localhost:3000/).
+### 2. Dossier `icons`
 
-You can now deploy the `build` folder **almost anywhere** easily, **for free** or very small cost (read the **[Deployment Guide](https://docusaurus.io/docs/deployment)**).
+Ce dossier contient les icônes personnalisées, souvent sous forme de composants React.
+
+Exemple de fichier dans `icons` :
+
+- `AddIcon.tsx` :
+
+  ```typescript
+  import React from "react";
+  import { Svg, Path } from "react-native-svg";
+  import { Colors } from "../../styles/Colors";
+  import { IconType } from "../../types/IconType";
+
+  export const AddIcon: React.FC<IconType> = ({
+    color = Colors().main.primary,
+    height = 20,
+    width = 20,
+  }) => (
+    <Svg width={width} height={height} viewBox="0 0 30 30" fill="none">
+      <Path
+        d="M15 5L15 25"
+        stroke={color}
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <Path
+        d="M5 15H25"
+        stroke={color}
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+    </Svg>
+  );
+  ```
+
+  Dans cet exemple, l’icône AddIcon est un composant React personnalisé qui accepte des props pour la couleur, la hauteur et la largeur, et utilise des chemins SVG pour dessiner l’icône.
+
+### 3. Dossier `images`
+
+Ce dossier contient toutes les images utilisées dans l’application, organisées en fonction des besoins spécifiques du projet.
+
+## Bonnes Pratiques
+
+- Organiser les polices et icônes par famille ou fonction : Chaque police ou icône devrait être placée dans un sous-dossier spécifique pour une meilleure organisation.
+- Composants d’icônes réutilisables : Les icônes devraient être créées comme des composants React réutilisables, permettant de les personnaliser via des props pour une meilleure flexibilité.
+- Utilisation d’images optimisées : Assurez-vous que les images sont optimisées pour le web pour améliorer les performances de l’application.
+
+En suivant cette structure, la gestion des assets devient plus claire et maintenable, facilitant les modifications et les ajouts futurs.
