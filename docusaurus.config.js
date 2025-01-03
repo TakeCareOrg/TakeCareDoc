@@ -70,9 +70,15 @@ const config = {
         items: [
           {
             type: "docSidebar",
-            sidebarId: "tutorialSidebar",
+            sidebarId: "docsFront",
             position: "left",
-            label: "DevGuide",
+            label: "Docs Front",
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "docsBack",
+            position: "left",
+            label: "Docs Back",
           },
           {
             href: "https://github.com/TakeCareOrg",
